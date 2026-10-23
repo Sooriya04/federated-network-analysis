@@ -1,0 +1,11 @@
+Property / Metric,Real Network (Empirical),Barabási-Albert Model (BA)
+Nodes (N),1547,1547
+Edges (M),41653,41040
+Average Degree <k>,53.85,53.06
+Average Clustering Coefficient (C),0.8098,0.085
+Average Shortest Path Length (L),2.0121,2.1329
+Power-Law Exponent (alpha),2.6028,2.8795
+Power-Law Lower Bound (xmin),19.0,27.0
+Standard Error of Alpha (sigma),0.0439,0.0478
+"Log-Likelihood Ratio vs Lognormal (R, p)","R=-6.683, p=0.327",N/A
+"Log-Likelihood Ratio vs Exponential (R, p)","R=893.714, p=0.000",N/A

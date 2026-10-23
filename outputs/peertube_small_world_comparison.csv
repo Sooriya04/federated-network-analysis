@@ -1,0 +1,4 @@
+Model,Nodes_N,Edges_M,Average_Degree,Clustering_C,Shortest_Path_L,Gamma_Ratio_C,Lambda_Ratio_L,Sigma_Humphries,Is_Small_World
+Real Empirical Network,1547,41653,53.85,0.8098,2.0121,1.0,1.0,24.5155,YES (Definitive)
+"Erdős–Rényi Random G(N, p)",1547,41542,53.71,0.0347,2.1147,0.0429,1.051,1.0,NO (Random Null)
+Degree-Preserving Rewired (Maslov-Sneppen),1547,41653,53.85,0.8585,1.9695,1.0601,0.9788,0.9233,NO (Rewired Null)

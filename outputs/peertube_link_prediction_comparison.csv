@@ -1,0 +1,6 @@
+Heuristic,AUC-ROC,Precision@50,Precision@100,Precision@200,Precision@500,Runtime_s
+Preferential Attachment (PA),0.9767,1.0,0.99,0.995,0.994,0.006
+Resource Allocation (RA),0.8892,1.0,1.0,0.99,0.994,0.103
+Adamic-Adar Index (AA),0.8575,1.0,1.0,0.99,0.996,0.1173
+Common Neighbors (CN),0.8387,1.0,1.0,0.99,0.996,0.0655
+Jaccard Coefficient (JC),0.1425,0.0,0.04,0.055,0.052,0.2486

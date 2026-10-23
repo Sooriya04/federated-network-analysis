@@ -1,0 +1,3 @@
+Scenario,Initial_Seeds,Final_Adoption_Count,Final_Adoption_Fraction,Convergence_Steps,Cascade_Outcome
+Full Linear Sequence (0..99),1,100,1.0,99,Global Complete Cascade (100%)
+Single Gap at Index 1 (No 1% Threshold),1,1,0.01,0,Abrupt Cascade Arrest (1% only)

@@ -1,0 +1,6 @@
+,in_degree,out_degree,closeness,betweenness,eigenvector
+in_degree,1.0,0.3566,0.5748,0.4685,0.9709
+out_degree,0.3566,1.0,0.0677,0.5245,0.2702
+closeness,0.5748,0.0677,1.0,0.1248,0.6206
+betweenness,0.4685,0.5245,0.1248,1.0,0.3555
+eigenvector,0.9709,0.2702,0.6206,0.3555,1.0

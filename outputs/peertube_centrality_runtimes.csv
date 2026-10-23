@@ -1,0 +1,5 @@
+Measure,Runtime_Seconds,Sample_Size_k
+degree,0.0024,N/A
+closeness,2.4987,N/A
+betweenness,5.632,exact
+eigenvector,0.1051,N/A

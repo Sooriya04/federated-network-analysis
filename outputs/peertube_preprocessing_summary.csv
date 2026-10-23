@@ -1,0 +1,28 @@
+Metric,Value
+Dataset Identifier,peertube
+Dataset Name,Fedivertex PeerTube Follow Network
+Dataset Citation,"Damie & Cyffers, WWW 2026 (arXiv:2505.20882)"
+Graph Type,Directed Graph (nx.DiGraph)
+Raw Total Edge Records,43888
+Raw Unique Node Identifiers,1553
+Missing / Null Records Removed,0
+Self-Loops Removed,9
+Duplicate Directed Edges Removed,0
+Cleaned Total Nodes,1553
+Cleaned Total Directed Edges,43879
+Cleaned Average Degree (In = Out),28.2543
+Cleaned Graph Density,0.018205
+Total Weakly Connected Components (WCC),4
+Largest WCC Nodes,1547
+Largest WCC Edges,43876
+Largest WCC Node Fraction (%),99.61
+Total Strongly Connected Components (SCC),986
+Largest SCC Nodes,534
+Largest SCC Edges,18718
+Largest SCC Node Fraction (%),34.39
+Degree Centrality Target Graph,Cleaned Full Graph G (captures global in/out nominations without truncation)
+PageRank & HITS Target Graph,Cleaned Full Graph G (stochastic transition matrix operates on full link structure)
+Closeness & Betweenness Target Graph,Largest WCC (prevents infinite distances and division by zero across disconnected components)
+Small-World & Path Analysis Target Graph,Largest WCC (standard complex-network benchmark to compute finite characteristic path lengths)
+Link Prediction Target Graph,Largest WCC (ensures negative non-edge sampling occurs over reachable topological domain)
+Granovetter Cascades Target Graph,Largest WCC (avoids artificial cascade halts at isolated singleton boundaries)

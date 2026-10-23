@@ -1,0 +1,31 @@
+Prestige Measure,Definition,Rank,Node ID,Score
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,1,makertube[DOT]net,0.12693298969072164
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,2,framatube[DOT]org,0.11984536082474227
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,3,video[DOT]blender[DOT]org,0.10438144329896908
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,4,tilvids[DOT]com,0.09858247422680412
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,5,diode[DOT]zone,0.09213917525773196
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,6,share[DOT]tube,0.07731958762886598
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,7,video[DOT]lqdn[DOT]fr,0.07087628865979381
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,8,dalek[DOT]zone,0.0702319587628866
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,9,spectra[DOT]video,0.06894329896907217
+In-Degree Prestige,Measures direct actor popularity or endorsement as the proportion of all other actors in the network that directly nominate or follow actor i.,10,conf[DOT]tube,0.06765463917525773
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",1,framatube[DOT]org,0.1975170242676823
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",2,video[DOT]blender[DOT]org,0.1870061705169689
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",3,makertube[DOT]net,0.18235053847569957
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",4,diode[DOT]zone,0.18122919879860377
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",5,share[DOT]tube,0.1777481314993764
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",6,tilvids[DOT]com,0.17743927288686664
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",7,video[DOT]lqdn[DOT]fr,0.17439285961392098
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",8,media[DOT]fsfe[DOT]org,0.17151961959562056
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",9,peertube[DOT]datagueule[DOT]tv,0.17099089487916175
+Proximity Prestige,"Measures how closely reachable an actor is from all members of its influence domain, scaled by the proportion of the network that can reach it.",10,conf[DOT]tube,0.16980841995575638
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",1,framatube[DOT]org,0.1081437080434922
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",2,video[DOT]blender[DOT]org,0.09193576779809523
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",3,makertube[DOT]net,0.09036406094258306
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",4,diode[DOT]zone,0.08037531855449234
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",5,video[DOT]lqdn[DOT]fr,0.0738305840584586
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",6,share[DOT]tube,0.07335933611724173
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",7,tilvids[DOT]com,0.071452835562718
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",8,skeptikon[DOT]fr,0.07047694776308017
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",9,peertube[DOT]datagueule[DOT]tv,0.06832736617440102
+Rank Prestige (Katz),"Measures actor prominence recursively based on the status of endorsements received, where nominations from already prestigious actors contribute more weight.",10,conf[DOT]tube,0.0647711805154232
