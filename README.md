@@ -1,119 +1,137 @@
-# Social Network Analysis (22ITPA0) — Complete Coursework & Research Paper Submission
+# Federated Network Analysis
 
-## Project Overview
+An open-source empirical research and analysis toolkit investigating topological invariants, directional prestige asymmetry, link predictability, and complex contagion dynamics in decentralized federated social graphs (ActivityPub / PeerTube).
 
-**Paper Title:** *Topological Invariants, Centrality Asymmetry, and Complex Contagion in Federated Social Networks: An Empirical Study of the PeerTube Video Graph*
-
-**Authors:**
-- **SOORIYA B** (`sooriyaw007@gmail.com`)
-- **PRASANTH R** (`prasanthdinesh001@gmail.com`)
-- **DERIN B C** (`derinbc@student.tce.edu`)
-- **ARAVIND S** (`aravinds2006vlr@gmail.com`)
-
-**Course:** 22ITPA0 — Social Network Analysis  
-**Academic Session:** 2025–2026
+This repository provides the complete experimental pipeline, sanitized instance-level graph datasets, interactive Jupyter / Google Colab notebooks, Gephi Lite browser visualization files, and the full IEEE-formatted research paper.
 
 ---
 
-## Directory Organization
+## 👥 Authors & Contributors
 
+* **SOORIYA B** — [sooriyaw007@gmail.com](mailto:sooriyaw007@gmail.com)
+* **PRASANTH R** — [prasanthdinesh001@gmail.com](mailto:prasanthdinesh001@gmail.com)
+* **DERIN B C** — [derinbc@student.tce.edu](mailto:derinbc@student.tce.edu)
+* **ARAVIND S** — [aravinds2006vlr@gmail.com](mailto:aravinds2006vlr@gmail.com)
+
+*Department of Information Technology, Thiagarajar College of Engineering, Madurai, Tamil Nadu, India.*
+
+---
+
+## 📄 Research Paper
+
+The complete research paper is located in [`research_paper/`](research_paper/):
+
+* **Title**: *Topological Invariants, Centrality Asymmetry, and Complex Contagion in Federated Social Networks: A Directed Graph Structural Analysis*
+* **Compiled Manuscript**: [`research_paper/IEEE-conference-template-062824.pdf`](research_paper/IEEE-conference-template-062824.pdf) (13-page double-column IEEE format)
+* **LaTeX Source**: [`research_paper/IEEE-conference-template-062824.tex`](research_paper/IEEE-conference-template-062824.tex)
+* **Document Class**: [`research_paper/IEEEtran.cls`](research_paper/IEEEtran.cls)
+
+---
+
+## 📁 Repository Structure
+
+```text
+federated-network-analysis/
+├── research_paper/       # Full research paper (PDF, LaTeX source, figures)
+│   ├── IEEE-conference-template-062824.pdf
+│   ├── IEEE-conference-template-062824.tex
+│   ├── IEEEtran.cls
+│   └── fig1..7_*.png    # High-resolution publication figures
+├── code/                 # Modular Python analysis scripts
+│   ├── a1_preprocess.py         # Graph sanitization & component extraction
+│   ├── a1_centrality.py         # Degree, Closeness, Betweenness, Eigenvector
+│   ├── a1_prestige.py           # Wasserman-Faust In-Degree, Proximity, Katz
+│   ├── a1_pagerank_hits.py      # PageRank damping sweep & Kleinberg HITS
+│   ├── a1_small_world.py        # Small-world sigma vs ER & rewiring
+│   ├── a1_pref_attachment.py   # Clauset MLE power-law fit
+│   ├── a2_link_prediction.py    # CN, Jaccard, AA, RA, PA benchmark
+│   ├── a2_granovetter.py        # Complex contagion threshold diffusion
+│   ├── a2_random_walk.py        # Markov chain TVD convergence
+│   ├── export_gephi_lite.py     # Gephi Lite coordinates & layout exporter
+│   ├── config.py / viz.py       # Configuration & visualization styling
+│   ├── run_all.py               # Master end-to-end pipeline runner
+│   └── requirements.txt         # Dependencies manifest
+├── datasets/             # Sanitized network datasets & provenance
+│   ├── cleaned/peertube_cleaned_edges.csv  # Cleaned directed follow graph (1,553 nodes, 43,879 links)
+│   └── dataset_info.md                     # Provenance and attribute schema
+├── gephi_lite/           # Instant web-based graph visualization assets
+│   ├── peertube_gephi_lite.json  # Graphology JSON (instant drag-and-drop)
+│   ├── peertube_gephi_lite.gexf  # GEXF 1.2 with viz coordinates & colors
+│   ├── gephi_nodes.csv           # Node table with all centrality metrics
+│   └── gephi_edges.csv           # Directed edge table
+├── notebooks/            # Interactive exploration & Google Colab
+│   ├── main.ipynb               # Step-by-step Jupyter notebook
+│   └── single_cell_colab.py     # All-in-one Google Colab execution script
+└── outputs/              # Exported publication figures & numerical result tables
 ```
-sna/
-├── README.md                      # Master roadmap and execution guide
-├── research_paper/                # IEEE conference manuscript & compilation assets
-│   ├── Topological_Invariants_PeerTube_SNA.pdf  # Main 13-page research paper PDF
-│   ├── IEEE-conference-template-062824.pdf      # Template-named copy of paper
-│   ├── IEEE-conference-template-062824.tex      # Full IEEE LaTeX source code
-│   ├── IEEEtran.cls                             # IEEE document class file
-│   ├── fig1_degree_powerlaw.png                 # Degree distribution & MLE power-law fit
-│   ├── fig2_small_world.png                     # Small-world clustering vs random baselines
-│   ├── fig3_centrality_heatmaps.png             # Pearson & Spearman centrality correlation matrices
-│   ├── fig4_network_core.png                    # Induced top-70 core network visualization (Louvain)
-│   ├── fig5_link_prediction.png                 # ROC curves and Precision@k distributions
-│   ├── fig6_granovetter.png                     # Contagion cascade trajectories & tipping point
-│   ├── fig7_random_walk.png                     # Ergodic TVD decay & PageRank scatter plot
-│   ├── paper_for_plagiarism_check.txt           # Clean plain text copy for Turnitin / Copyleaks
-│   └── plagiarism_audit_report.md               # Stylometric burstiness & AI diagnostic report
-├── code/                          # Production Python scripts (modular & standalone)
-│   ├── a1_preprocess.py                         # Graph construction, cleaning, and WCC/SCC extraction
-│   ├── a1_centrality.py                         # In/out-degree, closeness, betweenness, eigenvector
-│   ├── a1_prestige.py                           # Wasserman-Faust In-Degree, Proximity, Katz Rank prestige
-│   ├── a1_pagerank_hits.py                      # PageRank damping sweep & Kleinberg HITS decomposition
-│   ├── a1_pref_attachment.py                   # Power-law MLE fit & Barabási-Albert benchmark
-│   ├── a1_small_world.py                        # Clustering, path length, and Humphries small-world sigma
-│   ├── a2_link_prediction.py                    # 15% edge split, negative sampling, CN, JC, AA, RA, PA
-│   ├── a2_granovetter.py                        # Classic riot model & Gaussian complex contagion sweep
-│   ├── a2_random_walk.py                        # Random surfer & RWR ergodic convergence to stationary state
-│   ├── viz.py                                   # 300 dpi figure generation & Gephi GEXF export
-│   ├── run_all.py                               # Master end-to-end pipeline runner
-│   ├── check_plagiarism.py                      # Diagnostic script auditing burstiness & vocabulary
-│   └── requirements.txt                         # Exact pinned Python dependencies
-├── notebooks/                     # Interactive notebook demonstrations
-│   └── main.ipynb                               # 35-cell Colab-ready notebook with markdown interpretations
-├── datasets/                      # Real-world network datasets & provenance
-│   ├── dataset_info.md                          # Rigorous provenance for PeerTube and SNAP wiki-Vote
-│   ├── cleaned/
-│   │   ├── peertube_cleaned.csv                 # Cleaned directed follow graph (1,553 nodes, 43,879 edges)
-│   │   ├── peertube_wcc.csv                     # Largest WCC subgraph (1,547 nodes, 41,653 edges)
-│   │   └── wiki_vote_cleaned.csv                # Cleaned SNAP wiki-Vote graph (7,115 nodes, 103,689 edges)
-│   └── raw/
-│       └── wiki_vote/
-│           ├── wiki-Vote.txt                    # Raw SNAP edge list
-│           └── wiki-Vote.txt.gz                 # Compressed SNAP archive
-└── outputs/                       # Execution artifacts & exports
-    ├── *.csv                                    # All computed ranking and evaluation tables
-    ├── *.png                                    # High-resolution figures at 300 dpi
-    └── peertube_network.gexf                    # Full network with centrality attributes for Gephi
-```
 
 ---
 
-## Assignment Rubric Compliance Mapping
+## 🚀 Quick Start
 
-### Assignment I (40 Marks)
+### 1. Installation
 
-| Item | Requirement | Marks | Script / Artifact | Result Summary |
-| :--- | :--- | :---: | :--- | :--- |
-| **1** | Preprocessing & Cleaning | 4 | `code/a1_preprocess.py` | 9 self-loops removed; 1,553 vertices, 43,879 directed edges. Largest WCC: 1,547 nodes (99.61\%), Largest SCC: 534 nodes (34.39\%). |
-| **2** | Centrality Formulations | 4 | `code/a1_centrality.py` | Exact Brandes betweenness, directed closeness, eigenvector. Pearson \& Spearman correlation matrices (`outputs/centrality_corr_*.csv`). |
-| **3** | Directed Prestige | 3 | `code/a1_prestige.py` | Wasserman-Faust In-Degree Prestige ($P_D$), Proximity Prestige ($P_P$), Katz Rank Prestige ($P_R$). Top-10 tables in `outputs/prestige_top10.csv`. |
-| **4** | PageRank Dynamics | 3 | `code/a1_pagerank_hits.py` | Damping sweep ($d=0.85, 0.50, 0.99$); Spearman $\rho = 0.7654$ with in-degree; high rank stability ($\rho > 0.99$). |
-| **5** | Kleinberg HITS | 3 | `code/a1_pagerank_hits.py` | Severe structural asymmetry: pure authority `video.blender.org` ($a=0.001045, h=0.0$) vs pure directory hub `dalek.zone` ($h=0.0315$). |
-| **6** | Preferential Attachment | 2 | `code/a1_pref_attachment.py` | Clauset MLE fit: $\alpha = 2.6028 \pm 0.0439, x_{\min} = 19.00$ ($R = 893.71, p < 10^{-4}$ vs exponential). BA benchmark comparison. |
-| **7** | Small-World Assessment | 3 | `code/a1_small_world.py` | Small-world index $\sigma = 24.52 \gg 1$. High clustering ($C = 0.8098$ vs $C_{ER} = 0.0347$) and short geodesic paths ($L = 2.0121$). |
-| **8** | High-Res Visualizations | 3 | `code/viz.py` | Figures 1–4 generated at 300 dpi; Gephi-ready export `outputs/peertube_network.gexf` with all computed node attributes. |
+Clone this repository and install the dependencies:
 
-### Assignment II (40 Marks: 20 Implementation + 20 Research Paper)
-
-| Item | Requirement | Marks | Script / Artifact | Result Summary |
-| :--- | :--- | :---: | :--- | :--- |
-| **1** | Link Prediction Framework | 6 | `code/a2_link_prediction.py` | 15\% edge holdout preserving WCC; balanced negative non-edge sampling. PA ($\text{AUC} = 0.9767$), RA ($\text{AUC} = 0.8892$, P@100 = 1.0000). |
-| **2** | Granovetter Thresholds | 5 | `code/a2_granovetter.py` | Classic 100-node riot model + Gaussian thresholds on real graph. 8\% PageRank seeds trigger critical tipping point to 97.6\% cascade. |
-| **3** | Stochastic Random Walks | 2 | `code/a2_random_walk.py` | Ergodic surfer walk converges to PageRank ($TVD = 0.0343, r = 0.9973$); RWR achieves $r = 1.0000$ to Personalized PageRank. |
-| **4** | Dynamic Visualizations | 2 | `code/viz.py` | Figures 5–7: ROC curves, Precision@k, cascade time series, phase transition curve, TVD decay plots. |
-| **5** | Code Architecture & Demo | 2 | `code/run_all.py`, `notebooks/` | Clean modular repository, one-click execution runner, self-contained 35-cell Colab notebook. |
-| **6** | IEEE Research Paper | 20 | `research_paper/` | 13-page IEEE conference paper in PDF & LaTeX source, complete with 12 tables, 7 figures, verified Crossref DOIs, and zero AI artifacts. |
-
----
-
-## How to Run
-
-### Option 1: One-Click Python Execution
 ```bash
-cd sna/code
-pip install -r requirements.txt
-python run_all.py
+git clone https://github.com/Sooriya04/federated-network-analysis.git
+cd federated-network-analysis
+pip install -r code/requirements.txt
 ```
-*Total pipeline runtime: ~89 seconds.*
 
-### Option 2: Interactive Jupyter / Google Colab Notebook
-1. Open [`notebooks/main.ipynb`](file:///home/sooriya/Downloads/sna/sna/notebooks/main.ipynb) in JupyterLab, VS Code, or Google Colab.
-2. The initial cell automatically configures environment dependencies and datasets.
-3. Run all cells sequentially to reproduce all tables, statistics, and 300 dpi figures.
+### 2. Run the Complete Pipeline
 
-### Option 3: Plagiarism & Originality Diagnostic Audit
+To reproduce all 11 analytical stages and generate all output tables and figures:
+
 ```bash
-cd sna/code
-python check_plagiarism.py
+python code/run_all.py
 ```
-Outputs the stylometric burstiness and token diversity report to `outputs/plagiarism_audit_report.md`.
+
+### 3. Interactive Notebook / Google Colab
+
+* Run locally:
+  ```bash
+  jupyter notebook notebooks/main.ipynb
+  ```
+* Or copy the contents of `notebooks/single_cell_colab.py` into a blank cell on [Google Colab](https://colab.research.google.com/) for instant GPU/CPU cloud execution without local setup.
+
+---
+
+## 🌐 Instant Web Visualization with Gephi Lite
+
+No desktop software installation required:
+
+1. Open **[gephi.org/gephi-lite](https://gephi.org/gephi-lite/)** in your web browser.
+2. Drag and drop **`gephi_lite/peertube_gephi_lite.json`** into the browser window.
+3. The graph will render immediately with pre-computed ForceAtlas2 coordinates, Louvain modular community colors, and PageRank proportional node sizing.
+
+---
+
+## 📊 Summary of Empirical Findings
+
+| Metric / Experiment | Value / Result | Significance |
+| :--- | :--- | :--- |
+| **Network Scale** | 1,553 nodes, 43,879 edges | Complete sanitized PeerTube federated graph |
+| **Reciprocity** | 28.59% | Over 71% of syndication ties are strictly unidirectional |
+| **Degree Scaling Exponent** | $\alpha = 2.6028$ ($x_{\min}=15$) | Scale-free topology confirmed via Clauset MLE |
+| **Small-World Index** | $\sigma = 24.52 \gg 1$ | High clustering ($C=0.3025$) with short paths ($L=2.7667$) |
+| **Link Prediction** | RA: 100% precision @ top-100 | Resource Allocation penalizes indiscriminate crawlers |
+| **Complex Contagion** | Critical tipping point at 8% | Targeted PageRank seeding reaches 97.6% cascade |
+| **Ergodic Random Walk** | TVD = 0.0343 at 200k steps | Empirical visit frequencies match stationary PageRank ($R^2=0.9942$) |
+
+---
+
+## 📜 Citation & License
+
+This project is licensed under the [MIT License](LICENSE).
+
+If you use this codebase, dataset, or paper in your research, please cite:
+
+```bibtex
+@inproceedings{sooriya2026peertube,
+  title={Topological Invariants, Centrality Asymmetry, and Complex Contagion in Federated Social Networks: A Directed Graph Structural Analysis},
+  author={Sooriya, B. and Prasanth, R. and Derin, B. C. and Aravind, S.},
+  institution={Thiagarajar College of Engineering},
+  year={2026}
+}
+```
